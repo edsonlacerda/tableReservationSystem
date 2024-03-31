@@ -13,11 +13,33 @@ public class ControlListen {
     @RestClient
     TableService tableService;
 
+    @Inject
+    @RestClient
+    ReservationService reservationService;
+
     @GET
     @Path("/changes")
-    //@Scheduled(every="5s")
     public List<Tables> checkForChanges() {
-        return tableService.findTableFree();
+        List<Tables> freeTables = tableService.findTableFree();
+        List<Reservation> reservation = reservationService.reservations();
+        if (!freeTables.isEmpty() && !reservation.isEmpty()){
+            List<Reservation> orderedReservations = reservation.stream()
+                    .sorted((r1, r2) -> Long.compare(r1.getId(), r2.getId()))
+                    .toList();
+
+            List<Tables> orderedTables = freeTables.stream()
+                    .sorted((m1, m2) -> Long.compare(m1.getId(), m2.getId()))
+                    .toList();
+
+            if (!orderedReservations.isEmpty() && !orderedTables.isEmpty()) {
+                Reservation firstReservation = orderedReservations.get(0);
+                Tables firstTable = orderedTables.get(0);
+                tableService.occupyTable(firstTable.getId(), firstReservation.getId());
+                reservationService.deleteReservation(firstReservation.getId());
+            }
+        }
+        return freeTables;
     }
+
 
 }

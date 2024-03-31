@@ -5,30 +5,26 @@ import jakarta.persistence.Entity;
 
 @Entity
 public class Tables extends PanacheEntity {
-    private Long phoneNumber;
-    private Integer tableNumber;
+    private Long idReservation;
     private Integer numberOfChairs;
     private String status;
 
-    public Long getPhoneNumberPhoneNumber() {
-        return phoneNumber;
+    public Long getId(){
+        return id;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public Long getIdReservation() {
+        return idReservation;
     }
 
-    public Integer getTableNumber() {
-        return tableNumber;
-    }
-
-    public void setTableNumber(Integer tableNumber) {
-        this.tableNumber = tableNumber;
+    public void setIdReservation(Long idReservation) {
+        this.idReservation = idReservation;
     }
 
     public Integer getNumberOfChairs() {
         return numberOfChairs;
     }
+
     public void setNumberOfChairs(Integer numberOfChairs) {
         this.numberOfChairs = numberOfChairs;
     }

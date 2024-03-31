@@ -1,32 +1,27 @@
-package com.edsonlacerda.reservation;
+package com.edsonlacerda.control;
 
-public class ReservationDTO {
 
+public class Reservation  {
+    private Long id;
     private Long phoneNumber;
     private String name;
     private Integer numberOfPeople;
 
-    public ReservationDTO() {
+    public Long getId() {
+        return id;
     }
-
-    public ReservationDTO(Long phoneNumber, String name, Integer numberOfPeople) {
-        this.phoneNumber = phoneNumber;
-        this.name = name;
-        this.numberOfPeople = numberOfPeople;
+    public void setId(Long id) {
+        this.id = id;
     }
-
     public Long getPhoneNumber() {
         return phoneNumber;
     }
-
     public void setPhoneNumber(Long phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }

@@ -1,31 +1,35 @@
 package com.edsonlacerda.control;
 
 public class Tables {
-    private Long phoneNumber;
-    private Integer tableNumber;
-    private Boolean status; //LIBERADO, AGUARDANDO E OCUPADO
+    private Long id;
+    private Long idReservation;
+    private Integer numberOfChairs;
+    private String status;
 
-    public Long getPhoneNumber() {
-        return phoneNumber;
+    public Long getId() {
+        return id;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public Integer getTableNumber() {
-        return tableNumber;
+    public Long getIdReservation() {
+        return idReservation;
     }
-
-    public void setTableNumber(Integer tableNumber) {
-        this.tableNumber = tableNumber;
+    public void setIdReservation(Long idReservation) {
+        this.idReservation = idReservation;
     }
-
-    public Boolean getStatus() {
+    public Integer getNumberOfChairs() {
+        return numberOfChairs;
+    }
+    public void setNumberOfChairs(Integer numberOfChairs) {
+        this.numberOfChairs = numberOfChairs;
+    }
+    public String getStatus() {
         return status;
     }
-
-    public void setStatus(Boolean status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }
