@@ -78,7 +78,6 @@ public class ReservationResource {
     }
 
     private static void prepareSMS() {
-        //Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
         String twilioPhoneNumber = "+12062073830";
         String destinatario = "+19993431002";
         String mensagem = "Sua Reserva foi efetuada!";
