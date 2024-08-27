@@ -9,7 +9,8 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 
 import java.util.List;
 
-@RegisterRestClient(baseUri = "http://localhost:8083/reservation")
+//@RegisterRestClient(baseUri = "http://localhost:8083/reservation")
+@RegisterRestClient(baseUri = "http://reservations-app-edson-lacerda-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/reservation")
 public interface ReservationService {
 
     @GET

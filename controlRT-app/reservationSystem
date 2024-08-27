@@ -1,11 +1,13 @@
 
 ------------------->Sistema Reserva de mesas Quiosque Brahma<--------------------
 
-1 - Usuário preenche via input(formulário) seu celular e nome e clica em confirmar.
+1 - Usuário preenche via input(formulário) seu celular e nome depois clica em confirmar.
 
-2 - Ao confirmar o sistema informa que enviara um sms para aquele numero de celular, e pede para o usuário clicar em OK se o sms chegou e caso não chegue clique em NÃO.
+2 - Ao confirmar o sistema informa que enviara um sms para aquele numero de celular,
+    e pede para o usuário clicar em OK se o sms chegou e caso não chegue clique em NÃO.
 
-3 - Somente quando clicar em OK o sistema persiste o celular(id) e nome na tabela de reservas, e avisa que chegará um sms alertando quando uma mesa estiver disponível.
+3 - Somente quando clicar em OK o sistema persiste o celular(id) e nome na tabela de reservas,
+    e avisa que chegará um sms alertando quando uma mesa estiver disponível.
 
 4 - Caso clique em NÃO o sistema repete o item 1 e 2.
 
@@ -13,7 +15,7 @@
 
 5 - Numa segunda tabela chamada mesas, teremos seu id_mesa, celular(id_reserva) e status(LIVRE ou OCUPADO).
 
-6 - No inicio das operações todos registros da tabela mesas ficam com o phoneNumber nulo e Status(LIVRE).
+6 - No inicio das operações todos registros da tabela mesas ficam com o phoneNumber nulo e Status(OCUPADO).
 
 7 - A cada tempo é feito uma consulta na tabela de mesas para verificar o Status de alguma mesa LIVRE.
 

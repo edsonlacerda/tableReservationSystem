@@ -15,7 +15,8 @@ import org.eclipse.microprofile.rest.client.inject.RegisterRestClient;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-@RegisterRestClient(baseUri = "http://localhost:8082/tables")
+//@RegisterRestClient(baseUri = "http://localhost:8082/tables")
+@RegisterRestClient(baseUri = "http://table-app-edson-lacerda-dev.apps.sandbox-m2.ll9k.p1.openshiftapps.com/tables")
 public interface TableService {
 
     @GET

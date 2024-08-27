@@ -7,8 +7,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="reservations-app" />
-        <module name="table-app" />
         <module name="controlRT-app" />
+        <module name="table-app" />
       </profile>
     </annotationProcessing>
   </component>
