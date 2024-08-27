@@ -6,6 +6,7 @@ import jakarta.ws.rs.core.MediaType;
 
 import java.util.List;
 
+import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
 import jakarta.ws.rs.core.Response;
@@ -20,7 +21,7 @@ public class ReservationResource {
     }
 
     @GET
-    @Path("findById")
+    @Path("/findById")
     @Produces(MediaType.APPLICATION_JSON)
     public Reservation findById(@QueryParam("id") Long id){
         return Reservation.findById(id);
@@ -74,6 +75,14 @@ public class ReservationResource {
         reservation.setNumberOfPeople(reservationDto.getNumberOfPeople());
         reservation.persist();
         return reservation;
+    }
+
+    private static void prepareSMS() {
+        //Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+        String twilioPhoneNumber = "+12062073830";
+        String destinatario = "+19993431002";
+        String mensagem = "Sua Reserva foi efetuada!";
+        sendSMS(twilioPhoneNumber, destinatario, mensagem);
     }
 
     public static void sendSMS(String remetente, String destinatario, String mensagem) {
